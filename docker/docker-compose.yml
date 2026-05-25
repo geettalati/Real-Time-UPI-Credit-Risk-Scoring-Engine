@@ -8,27 +8,20 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=credit_risk
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DB=credit_risk
       - REDIS_HOST=redis
       - REDIS_PORT=6379
     depends_on:
-      - postgres
+      - mongodb
       - redis
 
-  postgres:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: credit_risk
+  mongodb:
+    image: mongo:7
     ports:
-      - "5432:5432"
+      - "27017:27017"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mongo_data:/data/db
 
   redis:
     image: redis:7
@@ -36,4 +29,4 @@ services:
       - "6379:6379"
 
 volumes:
-  postgres_data:
+  mongo_data:

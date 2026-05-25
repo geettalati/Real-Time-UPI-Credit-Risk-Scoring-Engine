@@ -7,7 +7,7 @@ This project is a Real-Time Credit Risk Scoring system for UPI-based lending.
 - `backend/`: FastAPI application handling API requests, business logic, and model inference.
 - `ml/`: Python scripts and Jupyter notebooks for data processing, model training, and exporting to ONNX.
 - `frontend/`: React dashboard (Vite) for lenders to view risk scores and borrower data.
-- `docker/`: Dockerfiles and `docker-compose.yml` for containerizing the backend, Redis, and PostgreSQL.
+- `docker/`: Dockerfiles and `docker-compose.yml` for containerizing the backend, Redis, and MongoDB.
 - `data/`: Raw, processed, and synthetic datasets.
 
 ## Requirements
